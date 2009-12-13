@@ -23,9 +23,21 @@ def message_list(request, protocol, uid, other_uid):
     other_account = get_object_or_404(Account, protocol=protocol, uid=other_uid)
     messages = Message.objects.filter(sender=user_account, receiver=other_account).order_by('timestamp')
     messages = messages | Message.objects.filter(sender=other_account, receiver=user_account).order_by('timestamp')
+    
+    conversations = []
+    conversation = []
+    last_message = None
+    for message in messages:
+        #A conversation ends if nothing is said for 60 minutes
+        if last_message is not None and message.timestamp - last_message.timestamp > datetime.timedelta(0, 60*60):
+            conversations.append(conversation)
+            conversation = []
+        conversation.append(message)
+        last_message = message
+    
     return render_to_response("message_list.html", 
                               {"protocol":protocol, "account":user_account, "other_account":other_account, 
-                               "messages":messages})
+                               "conversations":conversations})
     
 def get_or_create_account(protocol, uid, owner_account = None):
     user_accounts = Account.objects.filter(uid=uid).filter(protocol=protocol)

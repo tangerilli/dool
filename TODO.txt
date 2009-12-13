@@ -1,13 +1,12 @@
 = Needed Features =
 
- * Break the message list page into conversations
+ * Figure out a strategy for real-time or at least smarter incremental updates from Adium
  * Paginate the message list page
  * Add a search feature (search at different levels (conversations with a specific user, a specific protocol, or globally))
  * Write an importer for Miranda
- * Write an importer for ICQ
- * Figure out a strategy for real-time or at least smarter incremental updates from Adium
  * Write a README
   * Include instructions for setting up the website (or make it easier)
+ * Write an importer for ICQ
 
 = Maybe =
 
