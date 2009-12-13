@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+
+{% block content %}
+<h2 id="list_header">Chat transcript with {{ other_account.uid }} ({{ other_account.full_name }})</h2>
+<div id="messages">
+    {% for message in messages %}
+    <div class="message {% ifequal message.sender.uid other_account.uid %}sent{% endifequal %} {% ifequal message.receiver other_account %}received{% endifequal %}">
+        <div class="message_info">
+            <span class="message_timestamp">{{message.timestamp}}</span>
+            <span class="message_sender">{{message.sender.full_name}}: <span>
+        </div>
+        <div class="message_text">
+            <span class="message_text">{{message.text}}</span>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+div#messages {
+    
+}
+
+h2#list_header {
+    background-color: #80997B;
+    width: 75%;
+}
+
+div.message {
+    padding-left: 5px;
+}
+
+div.sent {
+    background-color: lightyellow;
+}
+
+div.received {
+    background-color: lightgrey;
+}
+
+span.message_sender, span.message_timestamp {
+    font-style: italic;
+    font-size: 11px;
+}
+
+span.message_timestamp {
+    font-weight: bold;
+}

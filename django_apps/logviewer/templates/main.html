@@ -1,0 +1,14 @@
+{% load media_path %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>{% block title %}Unified Message Log{% endblock %}</title>
+<link rel="stylesheet" href="{% media_path 'main.css' %}" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<body>
+    {% block content %}{% endblock %}
+</body>
+
+</html>

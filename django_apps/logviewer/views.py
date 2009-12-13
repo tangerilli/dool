@@ -27,7 +27,7 @@ def message_list(request, protocol, uid, other_uid):
                               {"protocol":protocol, "account":user_account, "other_account":other_account, 
                                "messages":messages})
     
-def get_account(protocol, uid, owner_account = None):
+def get_or_create_account(protocol, uid, owner_account = None):
     user_accounts = Account.objects.filter(uid=uid).filter(protocol=protocol)
     if len(user_accounts) == 0:
         user_account = Account()
@@ -43,14 +43,15 @@ def get_account(protocol, uid, owner_account = None):
     
 def message_add(request, protocol, uid):
     if request.method != "POST":
+        print "Did not post"
         raise Http404("You must post to this URL")
 
     print request.POST
     print protocol
     print uid
 
-    receiver_account = get_account(protocol, request.POST["receiver_account"], request.POST["owner_account"])
-    sender_account = get_account(protocol, request.POST["sender_account"], request.POST["owner_account"])  
+    receiver_account = get_or_create_account(protocol, request.POST["receiver_account"], request.POST["owner_account"])
+    sender_account = get_or_create_account(protocol, request.POST["sender_account"], request.POST["owner_account"])  
     if sender_account.full_name == "":
         sender_account.full_name = request.POST["alias"]
         sender_account.save()
