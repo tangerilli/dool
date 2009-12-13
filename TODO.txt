@@ -1,0 +1,18 @@
+= Needed Features =
+
+ * Make the account list pages look better
+  * Use the main template
+  * Note the protocol
+ * Break the message list page into conversations
+ * Paginate the message list page
+ * Add a search feature (search at different levels (conversations with a specific user, a specific protocol, or globally))
+ * Write an importer for Miranda
+ * Write an importer for ICQ
+ * Figure out a strategy for real-time or at least smarter incremental updates from Adium
+ * Write a README
+  * Include instructions for setting up the website (or make it easier)
+
+= Maybe =
+
+ * Write a plugin to view the logs from Adium
+ * Add the ability to associate multiple accounts with a single person, and then browse all conversations with that person (regardless of the protocol used)
