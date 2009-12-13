@@ -1,8 +1,5 @@
 = Needed Features =
 
- * Make the account list pages look better
-  * Use the main template
-  * Note the protocol
  * Break the message list page into conversations
  * Paginate the message list page
  * Add a search feature (search at different levels (conversations with a specific user, a specific protocol, or globally))

@@ -8,7 +8,7 @@ import logging
 import datetime
 
 def account_list(request):
-    account_list = Account.objects.filter(owned=True)
+    account_list = Account.objects.filter(owned=True).order_by('protocol')
     return render_to_response("account_list.html", {"account_list":account_list})
     
 def other_account_list(request, protocol, uid):
