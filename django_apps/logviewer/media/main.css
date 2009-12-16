@@ -10,6 +10,10 @@ div#main_content {
 	padding-bottom: 5px;
 }
 
+div#search_content {
+	display: none;
+}
+
 div#list_header {
     background-color: #80997B;
     width: 100%;

@@ -1,17 +1,17 @@
 {% extends "main.html" %}
 
+{% block search_url %}{% url search protocol,account.uid,other_account.uid  %}{% endblock %}
+
+{% block header %}<h2>Chat transcript with {{ other_account.full_name }} ({{ other_account.uid }})</h2>{% endblock %}
+
+{% block navlink %}
+<a href="{% url other_account_list account.protocol,account.uid %}">
+    Back to {{account.full_name}} ({{account.protocol}})
+</a>
+{% endblock %}
+
 {% block content %}
-<div id="list_header"><h2>Chat transcript with {{ other_account.full_name }} ({{ other_account.uid }})</h2></div>
-<div id="nav">
-    <a href="{% url other_account_list account.protocol,account.uid %}">
-        Back to {{account.full_name}} ({{account.protocol}})
-    </a>
-</div>
-<br/>
-
-
 <div id="conversations">
-    
     {% for conversation in conversations %}
         <div class="conversation">
             {% for message in conversation %}

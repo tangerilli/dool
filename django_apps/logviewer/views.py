@@ -6,6 +6,7 @@ from models import Account, Message
 
 import logging
 import datetime
+import simplejson
 
 def account_list(request):
     account_list = Account.objects.filter(owned=True).order_by('protocol')
@@ -38,6 +39,30 @@ def message_list(request, protocol, uid, other_uid):
     return render_to_response("message_list.html", 
                               {"protocol":protocol, "account":user_account, "other_account":other_account, 
                                "conversations":conversations})
+
+def search(request, protocol=None, uid=None, other_uid=None):
+    search_terms = request.GET.get("search_terms", "")
+    
+    messages = Message.objects
+    if uid is not None:
+        user_account = get_object_or_404(Account, protocol=protocol, uid=uid)
+        messages = messages.filter(sender=user_account) | messages.filter(receiver=user_account)
+    if other_uid is not None:
+        other_account = get_object_or_404(Account, protocol=protocol, uid=other_uid)
+        messages = messages.filter(sender=other_account) | messages.filter(receiver=other_account)
+    #TODO: Tokenize the search terms
+    messages = messages.filter(text__contains=search_terms)
+    
+    print messages.query.as_sql()
+    print [message.text for message in messages]
+
+    #Rank by date and search_term occurence
+    #Get the conversations the messages are part of
+    #Either render a template with the messages or return them in JSON form
+    
+    results = {"search":search_terms}
+    json = simplejson.dumps(results)
+    return HttpResponse(json, mimetype="application/json")
     
 def get_or_create_account(protocol, uid, owner_account = None):
     user_accounts = Account.objects.filter(uid=uid).filter(protocol=protocol)

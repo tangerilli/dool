@@ -5,11 +5,43 @@
 <head>
 <title>{% block title %}Unified Message Log{% endblock %}</title>
 <link rel="stylesheet" href="{% media_path 'main.css' %}" type="text/css" media="screen" charset="utf-8" />
+<script type="text/javascript" src="{% js_path "jquery" %}"></script>
+<script>
+
+search_url = "{% block search_url %} {% endblock %}"
+
+$(document).ready(function() {
+    $("#search").click(function() {
+        search_terms = $("#search_text").val();
+        if (search_terms)
+        {
+            $("#page_content").hide();
+            $.getJSON(search_url, {search_terms : search_terms}, function(data) {
+                //alert(data["search"]);
+            });
+            $("#search_content").show();
+        }
+    });
+});
+</script>
+
 </head>
 
 <body>
     <div id="main_content">
+        <div id="list_header">{% block header %}{% endblock %}</div>
+        <div id="nav">
+            {% block navlink %}{% endblock %}
+            <form>
+                <input type="search" id="search_text" value="" />
+                <input type="button" value="search" id="search" />
+            </form>
+        </div>
+        <br/>
+        <div id="page_content">
         {% block content %}{% endblock %}
+        </div>
+        <div id="search_content"></div>
     </div>
 </body>
 

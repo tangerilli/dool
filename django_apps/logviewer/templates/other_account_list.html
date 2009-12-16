@@ -1,11 +1,17 @@
 {% extends "main.html" %}
 
+{% block search_url %}{% url search protocol,uid  %}{% endblock %}
+
+{% block header %}<h2>Conversations using {{protocol}}:{{uid}}</h2>{% endblock %}
+
+{% block navlink %}
+<a href="{% url account_list %}">Back to Account List</a>
+{% endblock %}
+
 {% block content %}
-<div id="list_header"><h2>Conversations using {{protocol}}:{{uid}}</h2></div>
-<div id="nav"><a href="{% url account_list %}">Back to Account List</a></div>
-    <ul class="account_list" id="other_account_list">
-    {% for account in account_list %}
-        <li><a href="{% url message_list protocol,uid,account.uid %}">{{ account.full_name }} ({{ account.uid }})</a></li>
-    {% endfor %}
-    </ul>
+<ul class="account_list" id="other_account_list">
+{% for account in account_list %}
+    <li><a href="{% url message_list protocol,uid,account.uid %}">{{ account.full_name }} ({{ account.uid }})</a></li>
+{% endfor %}
+</ul>
 {% endblock %}
