@@ -8,6 +8,10 @@ import logging
 import datetime
 import simplejson
 
+#If the time difference between two messages is greater than this, they are
+#part of different conversations
+CONVERSATION_LIMIT = 60*60
+
 def account_list(request):
     account_list = Account.objects.filter(owned=True).order_by('protocol')
     return render_to_response("account_list.html", {"account_list":account_list})
@@ -30,7 +34,7 @@ def message_list(request, protocol, uid, other_uid):
     last_message = None
     for message in messages:
         #A conversation ends if nothing is said for 60 minutes
-        if last_message is not None and message.timestamp - last_message.timestamp > datetime.timedelta(0, 60*60):
+        if last_message is not None and message.timestamp - last_message.timestamp > datetime.timedelta(0, CONVERSATION_LIMIT):
             conversations.append(conversation)
             conversation = []
         conversation.append(message)
@@ -40,10 +44,25 @@ def message_list(request, protocol, uid, other_uid):
                               {"protocol":protocol, "account":user_account, "other_account":other_account, 
                                "conversations":conversations})
 
+def get_conversation(message):
+    account1 = message.sender
+    account2 = message.receiver
+    start_time = message.timestamp - datetime.timedelta(0, CONVERSATION_LIMIT)
+    end_time = message.timestamp + datetime.timedelta(0, CONVERSATION_LIMIT)
+    # First get any messages before this one in the conversation
+    all_messages = Message.objects.filter(sender=account1, receiver=account2) | Message.objects.filter(sender=account2, receiver=account1)
+    earlier = all_messages.filter(timestamp__gt=start_time).filter(timestamp__lt=message.timestamp).order_by('timestamp')
+    after = all_messages.filter(timestamp__lt=end_time).filter(timestamp__gt=message.timestamp).order_by('timestamp')
+    conversation = list(earlier) + [message] + list(after)
+    return conversation
+
 def search(request, protocol=None, uid=None, other_uid=None):
     search_terms = request.GET.get("search_terms", "")
+    format = request.GET.get("format", "html")
     
     messages = Message.objects
+    user_account = None
+    other_account = None
     if uid is not None:
         user_account = get_object_or_404(Account, protocol=protocol, uid=uid)
         messages = messages.filter(sender=user_account) | messages.filter(receiver=user_account)
@@ -51,18 +70,25 @@ def search(request, protocol=None, uid=None, other_uid=None):
         other_account = get_object_or_404(Account, protocol=protocol, uid=other_uid)
         messages = messages.filter(sender=other_account) | messages.filter(receiver=other_account)
     #TODO: Tokenize the search terms
-    messages = messages.filter(text__contains=search_terms)
+    messages = messages.filter(text__contains=search_terms).order_by('timestamp')
+    #TODO: Rank by date and search_term occurence
     
-    print messages.query.as_sql()
-    print [message.text for message in messages]
+    conversations = [get_conversation(message) for message in messages]
+    conversations.reverse()
 
-    #Rank by date and search_term occurence
-    #Get the conversations the messages are part of
     #Either render a template with the messages or return them in JSON form
-    
-    results = {"search":search_terms}
-    json = simplejson.dumps(results)
-    return HttpResponse(json, mimetype="application/json")
+    if format == "json":
+        results = {"search":search_terms}
+        json = simplejson.dumps(results)
+        return HttpResponse(json, mimetype="application/json")
+    elif format == "html":
+        return render_to_response("includes/_conversations.html", 
+                                  {"conversations":conversations,
+                                   "account":user_account, 
+                                   "other_account":other_account,
+                                   "search_results":messages})
+    else:
+        raise Exception("Unknown format")
     
 def get_or_create_account(protocol, uid, owner_account = None):
     user_accounts = Account.objects.filter(uid=uid).filter(protocol=protocol)

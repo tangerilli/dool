@@ -10,7 +10,7 @@ div#main_content {
 	padding-bottom: 5px;
 }
 
-div#search_content {
+div#search_box {
 	display: none;
 }
 
@@ -58,6 +58,10 @@ div.received {
     background-color: lightgrey;
 }
 
+div.search_result {
+	background-color: lightblue;
+}
+
 span.message_sender, span.message_timestamp {
     font-style: italic;
     font-size: 11px;
@@ -88,4 +92,12 @@ ul.account_list>li>a {
 
 a {
 	color: blue;
+}
+
+a#close_search {
+	text-decoration: none;
+}
+
+div#search_box>h2 {
+	display: inline;
 }

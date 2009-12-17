@@ -1,0 +1,18 @@
+{% load ifcontains %}
+<div id="conversations">
+    {% for conversation in conversations %}
+        <div class="conversation">
+            {% for message in conversation %}
+            <div class="message {% if message.sent %}sent {% else %} received{% endif %} {% ifcontains message search_results %}search_result{% endifcontains %}">
+                <div class="message_info">
+                    <span class="message_timestamp">{{message.timestamp}}</span>
+                    <span class="message_sender">{{message.sender.full_name}}: <span>
+                </div>
+                <div class="message_text">
+                    <span class="message_text">{{message.text}}</span>
+                </div>
+            </div>        
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>

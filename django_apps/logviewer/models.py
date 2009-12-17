@@ -17,5 +17,11 @@ class Message(models.Model):
     host = models.CharField(max_length=255)
     client_type = models.CharField(max_length=255)
     
+    def sent(self):
+        return self.sender.owned
+        
+    def received(self):
+        return not self.sent()
+        
     def __unicode__(self):
         return unicode(self.sender) + u' - ' + unicode(self.timestamp)

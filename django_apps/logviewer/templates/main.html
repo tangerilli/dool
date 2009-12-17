@@ -15,12 +15,18 @@ $(document).ready(function() {
         search_terms = $("#search_text").val();
         if (search_terms)
         {
-            $("#page_content").hide();
-            $.getJSON(search_url, {search_terms : search_terms}, function(data) {
-                //alert(data["search"]);
+            $.get(search_url, {search_terms : search_terms}, function(data) {
+                $("#page_content").hide();
+                $("#search_content").html(data)
+                $("#search_box").show();
             });
-            $("#search_content").show();
         }
+    });
+    
+    $("#close_search").click(function() {
+        $("#search_box").hide();
+        $("#page_content").show();
+        $("#search_text").val('')
     });
 });
 </script>
@@ -41,7 +47,11 @@ $(document).ready(function() {
         <div id="page_content">
         {% block content %}{% endblock %}
         </div>
-        <div id="search_content"></div>
+        <div id="search_box">
+            <h2>Search Results</h2>
+            (<a href="#" id="close_search">close</a>)
+            <div id="search_content"></div>
+        </div>
     </div>
 </body>
 
