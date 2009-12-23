@@ -75,7 +75,13 @@ def search(request, protocol=None, uid=None, other_uid=None):
     messages = messages.filter(text__contains=search_terms).order_by('timestamp')
     #TODO: Rank by date and search_term occurence
     
-    conversations = [get_conversation(message) for message in messages]
+    #Filter out messages that are part of the same conversation
+    convo_messages = [messages[0]]
+    for message in messages[1:]:
+        if message.timestamp - convo_messages[-1].timestamp > datetime.timedelta(0, CONVERSATION_LIMIT):
+            convo_messages.append(message)
+        
+    conversations = [get_conversation(message) for message in convo_messages]
     conversations.reverse()
 
     #Either render a template with the messages or return them in JSON form
