@@ -107,13 +107,22 @@ def get_or_create_account(protocol, uid, owner_account = None):
     return user_account
     
 def message_add(request, protocol, uid):
+    """
+    The URL must contain the protocol and the uid
+    
+    The following fields must be sent in the POST:
+    receiver_account: The UID of the receiver of the message
+    sender_account: The UID of the sender of the message
+    owner_account: The UID of the local account being used (should match one of sender or receiver in most cases)
+    alias: The fullname of the sender account
+    timestamp: The timestamp of the message, in the format "%Y-%m-%dT%H:%M:%SXXXXXX"
+    message_text: The actual content of the message
+    client_type: A string representing the chat client (i.e. adium, pidgin, miranda, etc..)
+    host: The hostname of the computer the client is running on
+    """
     if request.method != "POST":
         print "Did not post"
         raise Http404("You must post to this URL")
-
-    print request.POST
-    print protocol
-    print uid
 
     receiver_account = get_or_create_account(protocol, request.POST["receiver_account"], request.POST["owner_account"])
     sender_account = get_or_create_account(protocol, request.POST["sender_account"], request.POST["owner_account"])  
