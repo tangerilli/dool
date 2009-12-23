@@ -121,7 +121,11 @@ def message_add(request, protocol, uid):
         sender_account.full_name = request.POST["alias"]
         sender_account.save()
     
-    timestamp = datetime.datetime.strptime(request.POST["timestamp"][:-6], "%Y-%m-%dT%H:%M:%S")    
+    try:
+        timestamp = datetime.datetime.strptime(request.POST["timestamp"][:-6], "%Y-%m-%dT%H:%M:%S")
+    except Exception, e:
+        print e.message
+        timestamp = datetime.datetime.strptime(request.POST["timestamp"][:-6], "%Y-%m-%d %H:%M:%S")
     messages = Message.objects.filter(sender=sender_account).filter(receiver=receiver_account).filter(timestamp=timestamp)
     if len(messages) > 0:
         return HttpResponse(simplejson.dumps({"result":False,"reason":"Duplicate message"}), mimetype="application/json")
