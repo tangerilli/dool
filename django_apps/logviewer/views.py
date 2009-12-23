@@ -39,6 +39,8 @@ def message_list(request, protocol, uid, other_uid):
             conversation = []
         conversation.append(message)
         last_message = message
+    if len(conversation) > 0:
+        conversations.append(conversation)
     conversations.reverse()
     return render_to_response("message_list.html", 
                               {"protocol":protocol, "account":user_account, "other_account":other_account, 
