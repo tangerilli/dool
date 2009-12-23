@@ -1,0 +1,350 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
+		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+		EA40157E10D5B526007FA212 /* AIUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA40157D10D5B526007FA212 /* AIUtilities.framework */; };
+		EA40158210D5B531007FA212 /* FriBidi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA40158110D5B531007FA212 /* FriBidi.framework */; };
+		EA40158B10D5B728007FA212 /* AIDoolLoggerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = EA40158A10D5B728007FA212 /* AIDoolLoggerPlugin.m */; };
+		EA4015A110D5C862007FA212 /* JMDoolLoggerAdvancedPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4015A010D5C862007FA212 /* JMDoolLoggerAdvancedPreferences.m */; };
+		EA4015E910D5CE85007FA212 /* Dool_Logger_Prefs.nib in Resources */ = {isa = PBXBuildFile; fileRef = EA4015E810D5CE85007FA212 /* Dool_Logger_Prefs.nib */; };
+		EA40171710D624A7007FA212 /* Adium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA40171610D624A7007FA212 /* Adium.framework */; };
+		EAAAB94910DF69AC004BAA5E /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAAB93810DF69AC004BAA5E /* ASIFormDataRequest.m */; };
+		EAAAB94A10DF69AC004BAA5E /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAAB93A10DF69AC004BAA5E /* ASIHTTPRequest.m */; };
+		EAAAB94B10DF69AC004BAA5E /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAAB93D10DF69AC004BAA5E /* ASIInputStream.m */; };
+		EAAAB94C10DF69AC004BAA5E /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAAB93F10DF69AC004BAA5E /* ASINetworkQueue.m */; };
+		EAAAB94D10DF69AC004BAA5E /* ASINSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAAB94110DF69AC004BAA5E /* ASINSStringAdditions.m */; };
+		EAAAB96510DF6AAF004BAA5E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAAB96410DF6AAF004BAA5E /* SystemConfiguration.framework */; };
+		EAAAB96910DF6ACC004BAA5E /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAAB96810DF6ACC004BAA5E /* CoreServices.framework */; };
+		EAAAB96E10DF6AE3004BAA5E /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAAB96D10DF6AE3004BAA5E /* libz.1.2.3.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		32DBCF630370AF2F00C91783 /* doolAdiumPlugin_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = doolAdiumPlugin_Prefix.pch; sourceTree = "<group>"; };
+		8D5B49B6048680CD000E48DA /* doolAdiumPlugin.AdiumPlugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = doolAdiumPlugin.AdiumPlugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA40157D10D5B526007FA212 /* AIUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AIUtilities.framework; path = "../../../../src/adium-1.3.8/build/Development/AIUtilities.framework"; sourceTree = SOURCE_ROOT; };
+		EA40158110D5B531007FA212 /* FriBidi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FriBidi.framework; path = "../../../../src/adium-1.3.8/build/Development/FriBidi.framework"; sourceTree = SOURCE_ROOT; };
+		EA40158910D5B728007FA212 /* AIDoolLoggerPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIDoolLoggerPlugin.h; sourceTree = "<group>"; };
+		EA40158A10D5B728007FA212 /* AIDoolLoggerPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIDoolLoggerPlugin.m; sourceTree = "<group>"; };
+		EA40159F10D5C862007FA212 /* JMDoolLoggerAdvancedPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMDoolLoggerAdvancedPreferences.h; sourceTree = "<group>"; };
+		EA4015A010D5C862007FA212 /* JMDoolLoggerAdvancedPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMDoolLoggerAdvancedPreferences.m; sourceTree = "<group>"; };
+		EA4015E810D5CE85007FA212 /* Dool_Logger_Prefs.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = Dool_Logger_Prefs.nib; sourceTree = "<group>"; };
+		EA40171610D624A7007FA212 /* Adium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Adium.framework; path = "../../../../src/adium-1.3.8/build/Development/Adium.framework"; sourceTree = SOURCE_ROOT; };
+		EAAAB93710DF69AC004BAA5E /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
+		EAAAB93810DF69AC004BAA5E /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
+		EAAAB93910DF69AC004BAA5E /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
+		EAAAB93A10DF69AC004BAA5E /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIHTTPRequest.m; sourceTree = "<group>"; };
+		EAAAB93B10DF69AC004BAA5E /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestConfig.h; sourceTree = "<group>"; };
+		EAAAB93C10DF69AC004BAA5E /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIInputStream.h; sourceTree = "<group>"; };
+		EAAAB93D10DF69AC004BAA5E /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIInputStream.m; sourceTree = "<group>"; };
+		EAAAB93E10DF69AC004BAA5E /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
+		EAAAB93F10DF69AC004BAA5E /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
+		EAAAB94010DF69AC004BAA5E /* ASINSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINSStringAdditions.h; sourceTree = "<group>"; };
+		EAAAB94110DF69AC004BAA5E /* ASINSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINSStringAdditions.m; sourceTree = "<group>"; };
+		EAAAB96410DF6AAF004BAA5E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		EAAAB96810DF6ACC004BAA5E /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		EAAAB96D10DF6AE3004BAA5E /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D5B49B3048680CD000E48DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
+				EA40157E10D5B526007FA212 /* AIUtilities.framework in Frameworks */,
+				EA40158210D5B531007FA212 /* FriBidi.framework in Frameworks */,
+				EA40171710D624A7007FA212 /* Adium.framework in Frameworks */,
+				EAAAB96510DF6AAF004BAA5E /* SystemConfiguration.framework in Frameworks */,
+				EAAAB96910DF6ACC004BAA5E /* CoreServices.framework in Frameworks */,
+				EAAAB96E10DF6AE3004BAA5E /* libz.1.2.3.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* doolAdiumPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				EAAAB93410DF69AC004BAA5E /* ASIHttpRequest */,
+				08FB77AFFE84173DC02AAC07 /* Classes */,
+				32C88E010371C26100C91783 /* Other Sources */,
+				089C167CFE841241C02AAC07 /* Resources */,
+				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
+				19C28FB8FE9D52D311CA2CBB /* Products */,
+				EA4015E810D5CE85007FA212 /* Dool_Logger_Prefs.nib */,
+				EAAAB96410DF6AAF004BAA5E /* SystemConfiguration.framework */,
+				EAAAB96810DF6ACC004BAA5E /* CoreServices.framework */,
+				EAAAB96D10DF6AE3004BAA5E /* libz.1.2.3.dylib */,
+			);
+			name = doolAdiumPlugin;
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				EA40171610D624A7007FA212 /* Adium.framework */,
+				EA40158110D5B531007FA212 /* FriBidi.framework */,
+				EA40157D10D5B526007FA212 /* AIUtilities.framework */,
+				1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */,
+				1058C7AEFEA557BF11CA2CBB /* Other Frameworks */,
+			);
+			name = "Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D5B49B7048680CD000E48DA /* Info.plist */,
+				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AFFE84173DC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EA40158910D5B728007FA212 /* AIDoolLoggerPlugin.h */,
+				EA40158A10D5B728007FA212 /* AIDoolLoggerPlugin.m */,
+				EA40159F10D5C862007FA212 /* JMDoolLoggerAdvancedPreferences.h */,
+				EA4015A010D5C862007FA212 /* JMDoolLoggerAdvancedPreferences.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7AEFEA557BF11CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB8FE9D52D311CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D5B49B6048680CD000E48DA /* doolAdiumPlugin.AdiumPlugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32C88E010371C26100C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCF630370AF2F00C91783 /* doolAdiumPlugin_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		EAAAB93410DF69AC004BAA5E /* ASIHttpRequest */ = {
+			isa = PBXGroup;
+			children = (
+				EAAAB93710DF69AC004BAA5E /* ASIFormDataRequest.h */,
+				EAAAB93810DF69AC004BAA5E /* ASIFormDataRequest.m */,
+				EAAAB93910DF69AC004BAA5E /* ASIHTTPRequest.h */,
+				EAAAB93A10DF69AC004BAA5E /* ASIHTTPRequest.m */,
+				EAAAB93B10DF69AC004BAA5E /* ASIHTTPRequestConfig.h */,
+				EAAAB93C10DF69AC004BAA5E /* ASIInputStream.h */,
+				EAAAB93D10DF69AC004BAA5E /* ASIInputStream.m */,
+				EAAAB93E10DF69AC004BAA5E /* ASINetworkQueue.h */,
+				EAAAB93F10DF69AC004BAA5E /* ASINetworkQueue.m */,
+				EAAAB94010DF69AC004BAA5E /* ASINSStringAdditions.h */,
+				EAAAB94110DF69AC004BAA5E /* ASINSStringAdditions.m */,
+			);
+			path = ASIHttpRequest;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D5B49AC048680CD000E48DA /* doolAdiumPlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "doolAdiumPlugin" */;
+			buildPhases = (
+				8D5B49AF048680CD000E48DA /* Resources */,
+				8D5B49B1048680CD000E48DA /* Sources */,
+				8D5B49B3048680CD000E48DA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = doolAdiumPlugin;
+			productInstallPath = "$(HOME)/Library/Bundles";
+			productName = doolAdiumPlugin;
+			productReference = 8D5B49B6048680CD000E48DA /* doolAdiumPlugin.AdiumPlugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "doolAdiumPlugin" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 089C166AFE841209C02AAC07 /* doolAdiumPlugin */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D5B49AC048680CD000E48DA /* doolAdiumPlugin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D5B49AF048680CD000E48DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
+				EA4015E910D5CE85007FA212 /* Dool_Logger_Prefs.nib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D5B49B1048680CD000E48DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA40158B10D5B728007FA212 /* AIDoolLoggerPlugin.m in Sources */,
+				EA4015A110D5C862007FA212 /* JMDoolLoggerAdvancedPreferences.m in Sources */,
+				EAAAB94910DF69AC004BAA5E /* ASIFormDataRequest.m in Sources */,
+				EAAAB94A10DF69AC004BAA5E /* ASIHTTPRequest.m in Sources */,
+				EAAAB94B10DF69AC004BAA5E /* ASIInputStream.m in Sources */,
+				EAAAB94C10DF69AC004BAA5E /* ASINetworkQueue.m in Sources */,
+				EAAAB94D10DF69AC004BAA5E /* ASINSStringAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C167DFE841241C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C167EFE841241C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB913B08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../src/adium-1.3.8/build/Development\"",
+					"\"$(SRCROOT)/../../../../src/adium-1.3.8/build/Deployment\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = doolAdiumPlugin_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRODUCT_NAME = doolAdiumPlugin;
+				WRAPPER_EXTENSION = AdiumPlugin;
+			};
+			name = Debug;
+		};
+		1DEB913C08733D840010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../src/adium-1.3.8/build/Development\"",
+					"\"$(SRCROOT)/../../../../src/adium-1.3.8/build/Deployment\"",
+				);
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = doolAdiumPlugin_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_NAME = doolAdiumPlugin;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		1DEB913F08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Debug;
+		};
+		1DEB914008733D840010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "doolAdiumPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913B08733D840010E9CD /* Debug */,
+				1DEB913C08733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "doolAdiumPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913F08733D840010E9CD /* Debug */,
+				1DEB914008733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}
